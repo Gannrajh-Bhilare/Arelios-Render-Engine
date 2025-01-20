@@ -1,0 +1,3 @@
+[submodule "AreliosRenderer/vendor/GLFW"]
+	path = AreliosRenderer/vendor/GLFW
+	url = https://github.com/Gannrajh-Bhilare/glfw

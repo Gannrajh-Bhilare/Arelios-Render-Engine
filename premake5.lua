@@ -10,6 +10,12 @@ workspace "AreliosRenderer"
 
 outputdir = "%{cfg.buildcfg}-%{cfg.system}-{cfg.architecture}"
 
+--Include directories relative to root folder (solution directory)
+IncludeDir = {}
+IncludeDir["GLFW"] = "AreliosRenderer/vendor/GLFW/include"
+
+include "AreliosRenderer/vendor/GLFW"
+
 project "AreliosRenderer"
 	location "AreliosRenderer"
 	kind "SharedLib"
@@ -29,7 +35,14 @@ project "AreliosRenderer"
 
 	includedirs
 	{
-		"%{prj.name}/src"
+		"%{prj.name}/src",
+		"%(IncludeDir.GLFW)"
+	}
+
+	links
+	{
+		"GLFW",
+		"opengl32.lib"
 	}
 
 	filter "system:windows"
