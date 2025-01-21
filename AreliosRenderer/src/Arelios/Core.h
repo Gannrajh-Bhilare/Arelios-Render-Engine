@@ -10,4 +10,9 @@
 	#error Platform Not Supported!
 #endif
 
+#ifdef AS_ENABLE_ASSERTS
+	#define AS_ASSERT(x, ...) { if(!(x)) {__debugbreak();}}
+#endif
+
+
 #define Bit(x) (1 << x)

@@ -31,12 +31,17 @@
     <ClInclude Include="src\Arelios\Events\WindowEvents.h">
       <Filter>Arelios\Events</Filter>
     </ClInclude>
+    <ClInclude Include="src\Arelios\Window.h">
+      <Filter>Arelios</Filter>
+    </ClInclude>
     <ClInclude Include="src\areliospch.h" />
+    <ClInclude Include="src\Platform\Windows\WindowsWindow.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="src\Arelios\Application.cpp">
       <Filter>Arelios</Filter>
     </ClCompile>
     <ClCompile Include="src\areliospch.cpp" />
+    <ClCompile Include="src\Platform\Windows\WindowsWindow.cpp" />
   </ItemGroup>
 </Project>

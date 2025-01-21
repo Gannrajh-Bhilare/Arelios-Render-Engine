@@ -36,7 +36,7 @@ project "AreliosRenderer"
 	includedirs
 	{
 		"%{prj.name}/src",
-		"%(IncludeDir.GLFW)"
+		"%{IncludeDir.GLFW}"
 	}
 
 	links
@@ -62,7 +62,11 @@ project "AreliosRenderer"
 		}
 
 	filter "configurations:Debug"
-		defines "AS_DEBUG"
+		defines 
+		{
+			"AS_DEBUG",
+			"AS_ENABLE_ASSERTS"
+		}
 		symbols "On"
 
 	filter "configurations:Release"
