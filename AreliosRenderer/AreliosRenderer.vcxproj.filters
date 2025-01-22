@@ -7,6 +7,12 @@
     <Filter Include="Arelios\Events">
       <UniqueIdentifier>{B8F8791A-A4C6-6D20-8D5A-DE4679C74985}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Platform">
+      <UniqueIdentifier>{2AC788B4-1694-E3BF-3FAD-D1672BD9184E}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Platform\Windows">
+      <UniqueIdentifier>{64FBD71A-50F4-F66C-7926-DCF1657ED678}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="src\Arelios.h" />
@@ -19,29 +25,33 @@
     <ClInclude Include="src\Arelios\EntryPoint.h">
       <Filter>Arelios</Filter>
     </ClInclude>
+    <ClInclude Include="src\Arelios\Events\ApplicationEvents.h">
+      <Filter>Arelios\Events</Filter>
+    </ClInclude>
     <ClInclude Include="src\Arelios\Events\Events.h">
       <Filter>Arelios\Events</Filter>
     </ClInclude>
-    <ClInclude Include="src\Arelios\Events\KeyEvent.h">
+    <ClInclude Include="src\Arelios\Events\KeyEvents.h">
       <Filter>Arelios\Events</Filter>
     </ClInclude>
     <ClInclude Include="src\Arelios\Events\MouseEvents.h">
       <Filter>Arelios\Events</Filter>
     </ClInclude>
-    <ClInclude Include="src\Arelios\Events\WindowEvents.h">
-      <Filter>Arelios\Events</Filter>
-    </ClInclude>
     <ClInclude Include="src\Arelios\Window.h">
       <Filter>Arelios</Filter>
     </ClInclude>
+    <ClInclude Include="src\Platform\Windows\WindowsWindow.h">
+      <Filter>Platform\Windows</Filter>
+    </ClInclude>
     <ClInclude Include="src\areliospch.h" />
-    <ClInclude Include="src\Platform\Windows\WindowsWindow.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="src\Arelios\Application.cpp">
       <Filter>Arelios</Filter>
     </ClCompile>
+    <ClCompile Include="src\Platform\Windows\WindowsWindow.cpp">
+      <Filter>Platform\Windows</Filter>
+    </ClCompile>
     <ClCompile Include="src\areliospch.cpp" />
-    <ClCompile Include="src\Platform\Windows\WindowsWindow.cpp" />
   </ItemGroup>
 </Project>

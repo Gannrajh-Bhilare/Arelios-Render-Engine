@@ -156,20 +156,20 @@
     <ClInclude Include="src\Arelios\Application.h" />
     <ClInclude Include="src\Arelios\Core.h" />
     <ClInclude Include="src\Arelios\EntryPoint.h" />
+    <ClInclude Include="src\Arelios\Events\ApplicationEvents.h" />
     <ClInclude Include="src\Arelios\Events\Events.h" />
-    <ClInclude Include="src\Arelios\Events\KeyEvent.h" />
+    <ClInclude Include="src\Arelios\Events\KeyEvents.h" />
     <ClInclude Include="src\Arelios\Events\MouseEvents.h" />
-    <ClInclude Include="src\Arelios\Events\WindowEvents.h" />
     <ClInclude Include="src\Arelios\Window.h" />
-    <ClInclude Include="src\areliospch.h" />
     <ClInclude Include="src\Platform\Windows\WindowsWindow.h" />
+    <ClInclude Include="src\areliospch.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="src\Arelios\Application.cpp" />
+    <ClCompile Include="src\Platform\Windows\WindowsWindow.cpp" />
     <ClCompile Include="src\areliospch.cpp">
       <PrecompiledHeader>Create</PrecompiledHeader>
     </ClCompile>
-    <ClCompile Include="src\Platform\Windows\WindowsWindow.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="vendor\GLFW\GLFW.vcxproj">
