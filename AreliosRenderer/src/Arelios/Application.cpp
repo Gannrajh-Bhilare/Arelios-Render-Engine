@@ -20,12 +20,15 @@ namespace Arelios {
 	void Application::OnEvent(Event& e)
 	{
 		EventDispatcher eventDispatcher(e);
-
-		//Log the events
-		std::clog << e.GetName() << '\r' << std::flush;
-		
 		eventDispatcher.Dispatch<WindowCloseEvent>(BIND_EVENT_FN(OnWindowClose));
-		eventDispatcher.Dispatch<KeyPressedEvent>(BIND_EVENT_FN(OnKeyPress));
+		
+		//Running events from back to front
+		for (auto it = m_LayerStack.end(); it != m_LayerStack.begin();)
+		{
+			(*--it)->OnEvent(e);
+			if (e.m_Handled)
+				break;
+		}
 	}
 
 	void Application::Run()
@@ -34,21 +37,39 @@ namespace Arelios {
 		{
 			glClearColor(0.3f, 0.3f, 0.4f, 1.0f);
 			glClear(GL_COLOR_BUFFER_BIT);
+
+			for (Layer* layer : m_LayerStack)
+			{
+				layer->OnUpdate();
+			}
+
 			m_Window->OnUpdate();
 		}
+	}
+
+	void Application::PushLayer(Layer* layer)
+	{
+		m_LayerStack.PushLayer(layer);
+	}
+
+	void Application::PushOverlay(Layer* overlay)
+	{
+		m_LayerStack.PushOverlay(overlay);
+	}
+
+	void Application::PopLayer(Layer* layer)
+	{
+		m_LayerStack.PopLayer(layer);
+	}
+
+	void Application::PopOverlay(Layer* overlay)
+	{
+		m_LayerStack.PopOverlay(overlay);
 	}
 
 	bool Application::OnWindowClose(WindowCloseEvent& windowCloseEvent)
 	{
 		m_IsRunning = false;
-		return true;
-	}
-
-	bool Application::OnKeyPress(KeyPressedEvent& keyPressedEvent)
-	{
-		if (keyPressedEvent.GetKeyCode() == GLFW_KEY_ESCAPE)
-			m_IsRunning = false;
-
 		return true;
 	}
 }

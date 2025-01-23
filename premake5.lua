@@ -67,14 +67,17 @@ project "AreliosRenderer"
 			"AS_DEBUG",
 			"AS_ENABLE_ASSERTS"
 		}
+		buildoptions "/MDd"
 		symbols "On"
 
 	filter "configurations:Release"
 		defines "AS_Release"
+		buildoptions "/MD"
 		optimize "On"
 
 	filter "configurations:Dist"
 		defines "AS_DIST"
+		buildoptions "/MD"
 		optimize "On"
 
 project "Sandbox"

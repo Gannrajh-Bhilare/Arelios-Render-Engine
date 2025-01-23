@@ -29,7 +29,7 @@ namespace Arelios {
 
 	class ARELIOS_API Event {
 		friend class EventDispatcher;
-	private:
+	public:
 		bool m_Handled = false;
 	public:
 		virtual EventType GetEventType() const = 0;
