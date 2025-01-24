@@ -13,8 +13,10 @@ outputdir = "%{cfg.buildcfg}-%{cfg.system}-{cfg.architecture}"
 --Include directories relative to root folder (solution directory)
 IncludeDir = {}
 IncludeDir["GLFW"] = "AreliosRenderer/vendor/GLFW/include"
+IncludeDir["Glad"] = "AreliosRenderer/vendor/Glad/include"
 
 include "AreliosRenderer/vendor/GLFW"
+include "AreliosRenderer/vendor/Glad"
 
 project "AreliosRenderer"
 	location "AreliosRenderer"
@@ -36,12 +38,14 @@ project "AreliosRenderer"
 	includedirs
 	{
 		"%{prj.name}/src",
-		"%{IncludeDir.GLFW}"
+		"%{IncludeDir.GLFW}",
+		"%{IncludeDir.Glad}"
 	}
 
 	links
 	{
 		"GLFW",
+		"Glad",
 		"opengl32.lib"
 	}
 
@@ -53,7 +57,8 @@ project "AreliosRenderer"
 		defines
 		{
 			"AS_PLATFORM_WINDOWS",
-			"AS_BUILD_DLL"
+			"AS_BUILD_DLL",
+			"GLFW_INCLUDE_NONE"
 		}
 
 		postbuildcommands

@@ -7,6 +7,8 @@
 #include "Arelios/Events/MouseEvents.h"
 #include "Arelios/Events/KeyEvents.h"
 
+#include <glad/glad.h>
+
 namespace Arelios {
 
 	static bool s_GLFWInitialised = false;
@@ -52,6 +54,11 @@ namespace Arelios {
 
 		m_Window = glfwCreateWindow(m_WindowData.width, m_WindowData.height, m_WindowData.title.c_str(), NULL, NULL);
 		glfwMakeContextCurrent(m_Window);
+
+		//Loading GLAD for OpenGL
+		int status = gladLoadGLLoader((GLADloadproc)glfwGetProcAddress);
+		AS_ASSERT(status);
+
 		glfwSetWindowUserPointer(m_Window, &m_WindowData);
 
 		//GLFW event handling
