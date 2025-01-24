@@ -14,9 +14,11 @@ outputdir = "%{cfg.buildcfg}-%{cfg.system}-{cfg.architecture}"
 IncludeDir = {}
 IncludeDir["GLFW"] = "AreliosRenderer/vendor/GLFW/include"
 IncludeDir["Glad"] = "AreliosRenderer/vendor/Glad/include"
+IncludeDir["ImGui"] = "AreliosRenderer/vendor/imgui"
 
 include "AreliosRenderer/vendor/GLFW"
 include "AreliosRenderer/vendor/Glad"
+include "AreliosRenderer/vendor/imgui"
 
 project "AreliosRenderer"
 	location "AreliosRenderer"
@@ -39,13 +41,15 @@ project "AreliosRenderer"
 	{
 		"%{prj.name}/src",
 		"%{IncludeDir.GLFW}",
-		"%{IncludeDir.Glad}"
+		"%{IncludeDir.Glad}",
+		"%{IncludeDir.ImGui}"
 	}
 
 	links
 	{
 		"GLFW",
 		"Glad",
+		"ImGui",
 		"opengl32.lib"
 	}
 

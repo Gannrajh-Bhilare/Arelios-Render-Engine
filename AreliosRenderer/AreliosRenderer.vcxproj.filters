@@ -50,6 +50,8 @@
       <Filter>Platform\Windows</Filter>
     </ClInclude>
     <ClInclude Include="src\areliospch.h" />
+    <ClInclude Include="src\Arelios\ImGui\ImGuiLayer.h" />
+    <ClInclude Include="src\Platform\OpenGL\imGuiOpenGLRenderer.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="src\Arelios\Application.cpp">
@@ -65,5 +67,7 @@
       <Filter>Platform\Windows</Filter>
     </ClCompile>
     <ClCompile Include="src\areliospch.cpp" />
+    <ClCompile Include="src\Arelios\ImGui\ImGuiLayer.cpp" />
+    <ClCompile Include="src\Platform\OpenGL\imGuiOpenGLRenderer.cpp" />
   </ItemGroup>
 </Project>

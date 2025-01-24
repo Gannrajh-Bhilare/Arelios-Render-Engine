@@ -16,24 +16,15 @@ public:
 	void OnEvent(Arelios::Event& e) override
 	{
 		std::cout << this->GetDebugName() << ": " << e.GetName() << std::endl;
-	}
-};
 
-class TestLayer2 : public Arelios::Layer {
-public:
-	TestLayer2()
-		:Layer("TestLayer2")
-	{
+		Arelios::EventDispatcher eventDispatcher(e);
+		eventDispatcher.Dispatch<Arelios::KeyPressedEvent>(std::bind(&TestLayer::OnKeyPressed, this, std::placeholders::_1));
 	}
 
-	void OnUpdate() override
+	bool OnKeyPressed(Arelios::KeyPressedEvent& e)
 	{
-		std::clog << this->GetDebugName() << " Updated\r" << std::flush;
-	}
-
-	void OnEvent(Arelios::Event& e) override
-	{
-		std::cout << this->GetDebugName() << ": " << e.GetName() << std::endl;
+		std::cout << "Key Pressed: " << e.GetKeyCode() << std::endl;
+		return true;
 	}
 };
 
@@ -42,7 +33,7 @@ public:
 	Sandbox()
 	{
 		PushLayer(new TestLayer());
-		PushLayer(new TestLayer2());
+		PushOverlay(new Arelios::ImGuiLayer());
 	}
 
 	~Sandbox()
