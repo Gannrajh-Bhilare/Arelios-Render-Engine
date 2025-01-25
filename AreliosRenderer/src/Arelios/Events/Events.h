@@ -8,7 +8,7 @@ namespace Arelios {
 		none = 0,
 		WindowReSize, WindowLoseFocus, WindowFocus, WindowClose, WindowMoved,
 		AppTick, AppUpdate, AppRender,
-		KeyPressed, KeyRelease,
+		KeyPressed, KeyRelease, KeyTyped,
 		MousePressed, MouseReleased, MouseMoved, MouseScrolled
 	};
 

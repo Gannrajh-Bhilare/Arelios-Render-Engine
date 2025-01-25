@@ -15,15 +15,13 @@ public:
 
 	void OnEvent(Arelios::Event& e) override
 	{
-		std::cout << this->GetDebugName() << ": " << e.GetName() << std::endl;
-
 		Arelios::EventDispatcher eventDispatcher(e);
 		eventDispatcher.Dispatch<Arelios::KeyPressedEvent>(std::bind(&TestLayer::OnKeyPressed, this, std::placeholders::_1));
 	}
 
 	bool OnKeyPressed(Arelios::KeyPressedEvent& e)
 	{
-		std::cout << "Key Pressed: " << e.GetKeyCode() << std::endl;
+		//std::cout << "Key Pressed: " << e.GetKeyCode() << std::endl;
 		return true;
 	}
 };

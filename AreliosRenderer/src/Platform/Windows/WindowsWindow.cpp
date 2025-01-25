@@ -107,6 +107,13 @@ namespace Arelios {
 			}
 		});
 
+		glfwSetCharCallback(m_Window, [](GLFWwindow* window, unsigned int keyCode)
+		{
+			WindowData& data = *(WindowData*)glfwGetWindowUserPointer(window);
+			KeyTypedEvent keyTypedEvent(keyCode);
+			data.EventCallBack(keyTypedEvent);
+		});
+
 		glfwSetMouseButtonCallback(m_Window, [](GLFWwindow* window, int key, int action, int mods)
 		{
 			WindowData& data = *(WindowData*)glfwGetWindowUserPointer(window);
