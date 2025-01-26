@@ -52,6 +52,7 @@
     <ClInclude Include="src\areliospch.h" />
     <ClInclude Include="src\Arelios\ImGui\ImGuiLayer.h" />
     <ClInclude Include="src\Platform\OpenGL\imGuiOpenGLRenderer.h" />
+    <ClInclude Include="src\Arelios\Renderer.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="src\Arelios\Application.cpp">
@@ -69,5 +70,6 @@
     <ClCompile Include="src\areliospch.cpp" />
     <ClCompile Include="src\Arelios\ImGui\ImGuiLayer.cpp" />
     <ClCompile Include="src\Platform\OpenGL\imGuiOpenGLRenderer.cpp" />
+    <ClCompile Include="src\Arelios\Renderer.cpp" />
   </ItemGroup>
 </Project>

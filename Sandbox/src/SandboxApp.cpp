@@ -30,6 +30,7 @@ class Sandbox : public Arelios::Application {
 public:
 	Sandbox()
 	{
+		PushLayer(new Arelios::Renderer());
 		PushLayer(new TestLayer());
 		PushOverlay(new Arelios::ImGuiLayer());
 	}

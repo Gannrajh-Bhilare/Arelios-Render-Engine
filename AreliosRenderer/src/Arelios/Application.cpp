@@ -41,9 +41,6 @@ namespace Arelios {
 		//Main loop
 		while (m_IsRunning)
 		{
-			glClearColor(0.3f, 0.3f, 0.4f, 1.0f);
-			glClear(GL_COLOR_BUFFER_BIT);
-
 			//Updating all Layers in layer stack
 			for (Layer* layer : m_LayerStack)
 			{
