@@ -10,7 +10,6 @@ public:
 
 	void OnUpdate() override
 	{
-		std::clog << this->GetDebugName() << " Updated\r" << std::flush;
 	}
 
 	void OnEvent(Arelios::Event& e) override
@@ -30,8 +29,8 @@ class Sandbox : public Arelios::Application {
 public:
 	Sandbox()
 	{
-		PushLayer(new Arelios::Renderer());
 		PushLayer(new TestLayer());
+		PushLayer(new Arelios::Renderer());
 		PushOverlay(new Arelios::ImGuiLayer());
 	}
 

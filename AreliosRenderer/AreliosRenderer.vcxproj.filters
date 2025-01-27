@@ -7,8 +7,14 @@
     <Filter Include="Arelios\Events">
       <UniqueIdentifier>{B8F8791A-A4C6-6D20-8D5A-DE4679C74985}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Arelios\ImGui">
+      <UniqueIdentifier>{7E778CF1-EA37-0828-B372-51A51FF24C04}</UniqueIdentifier>
+    </Filter>
     <Filter Include="Platform">
       <UniqueIdentifier>{2AC788B4-1694-E3BF-3FAD-D1672BD9184E}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Platform\OpenGL">
+      <UniqueIdentifier>{1E7D2C1D-8A08-9AE1-9319-1DD6FF23F6E1}</UniqueIdentifier>
     </Filter>
     <Filter Include="Platform\Windows">
       <UniqueIdentifier>{64FBD71A-50F4-F66C-7926-DCF1657ED678}</UniqueIdentifier>
@@ -37,26 +43,35 @@
     <ClInclude Include="src\Arelios\Events\MouseEvents.h">
       <Filter>Arelios\Events</Filter>
     </ClInclude>
+    <ClInclude Include="src\Arelios\ImGui\ImGuiLayer.h">
+      <Filter>Arelios\ImGui</Filter>
+    </ClInclude>
     <ClInclude Include="src\Arelios\Layer.h">
       <Filter>Arelios</Filter>
     </ClInclude>
     <ClInclude Include="src\Arelios\LayerStack.h">
       <Filter>Arelios</Filter>
     </ClInclude>
+    <ClInclude Include="src\Arelios\Renderer.h">
+      <Filter>Arelios</Filter>
+    </ClInclude>
     <ClInclude Include="src\Arelios\Window.h">
       <Filter>Arelios</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Platform\OpenGL\imGuiOpenGLRenderer.h">
+      <Filter>Platform\OpenGL</Filter>
     </ClInclude>
     <ClInclude Include="src\Platform\Windows\WindowsWindow.h">
       <Filter>Platform\Windows</Filter>
     </ClInclude>
     <ClInclude Include="src\areliospch.h" />
-    <ClInclude Include="src\Arelios\ImGui\ImGuiLayer.h" />
-    <ClInclude Include="src\Platform\OpenGL\imGuiOpenGLRenderer.h" />
-    <ClInclude Include="src\Arelios\Renderer.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="src\Arelios\Application.cpp">
       <Filter>Arelios</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Arelios\ImGui\ImGuiLayer.cpp">
+      <Filter>Arelios\ImGui</Filter>
     </ClCompile>
     <ClCompile Include="src\Arelios\Layer.cpp">
       <Filter>Arelios</Filter>
@@ -64,12 +79,15 @@
     <ClCompile Include="src\Arelios\LayerStack.cpp">
       <Filter>Arelios</Filter>
     </ClCompile>
+    <ClCompile Include="src\Arelios\Renderer.cpp">
+      <Filter>Arelios</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Platform\OpenGL\imGuiOpenGLRenderer.cpp">
+      <Filter>Platform\OpenGL</Filter>
+    </ClCompile>
     <ClCompile Include="src\Platform\Windows\WindowsWindow.cpp">
       <Filter>Platform\Windows</Filter>
     </ClCompile>
     <ClCompile Include="src\areliospch.cpp" />
-    <ClCompile Include="src\Arelios\ImGui\ImGuiLayer.cpp" />
-    <ClCompile Include="src\Platform\OpenGL\imGuiOpenGLRenderer.cpp" />
-    <ClCompile Include="src\Arelios\Renderer.cpp" />
   </ItemGroup>
 </Project>

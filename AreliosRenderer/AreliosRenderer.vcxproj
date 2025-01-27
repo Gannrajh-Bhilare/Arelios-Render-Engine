@@ -55,22 +55,22 @@
   <PropertyGroup Label="UserMacros" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
     <LinkIncremental>true</LinkIncremental>
-    <OutDir>..\bin\Debug-windows-{cfg.architecture}\AreliosRenderer\</OutDir>
-    <IntDir>..\bin-int\Debug-windows-{cfg.architecture}\AreliosRenderer\</IntDir>
+    <OutDir>..\bin\Debug-windows-x86_64\AreliosRenderer\</OutDir>
+    <IntDir>..\bin-int\Debug-windows-x86_64\AreliosRenderer\</IntDir>
     <TargetName>AreliosRenderer</TargetName>
     <TargetExt>.dll</TargetExt>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
     <LinkIncremental>false</LinkIncremental>
-    <OutDir>..\bin\Release-windows-{cfg.architecture}\AreliosRenderer\</OutDir>
-    <IntDir>..\bin-int\Release-windows-{cfg.architecture}\AreliosRenderer\</IntDir>
+    <OutDir>..\bin\Release-windows-x86_64\AreliosRenderer\</OutDir>
+    <IntDir>..\bin-int\Release-windows-x86_64\AreliosRenderer\</IntDir>
     <TargetName>AreliosRenderer</TargetName>
     <TargetExt>.dll</TargetExt>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Dist|x64'">
     <LinkIncremental>false</LinkIncremental>
-    <OutDir>..\bin\Dist-windows-{cfg.architecture}\AreliosRenderer\</OutDir>
-    <IntDir>..\bin-int\Dist-windows-{cfg.architecture}\AreliosRenderer\</IntDir>
+    <OutDir>..\bin\Dist-windows-x86_64\AreliosRenderer\</OutDir>
+    <IntDir>..\bin-int\Dist-windows-x86_64\AreliosRenderer\</IntDir>
     <TargetName>AreliosRenderer</TargetName>
     <TargetExt>.dll</TargetExt>
   </PropertyGroup>
@@ -83,8 +83,7 @@
       <AdditionalIncludeDirectories>src;vendor\GLFW\include;vendor\Glad\include;vendor\imgui;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <DebugInformationFormat>EditAndContinue</DebugInformationFormat>
       <Optimization>Disabled</Optimization>
-      <RuntimeLibrary>MultiThreadedDebug</RuntimeLibrary>
-      <AdditionalOptions>/MDd %(AdditionalOptions)</AdditionalOptions>
+      <RuntimeLibrary>MultiThreadedDebugDLL</RuntimeLibrary>
       <LanguageStandard>stdcpp14</LanguageStandard>
       <ExternalWarningLevel>Level3</ExternalWarningLevel>
     </ClCompile>
@@ -92,10 +91,10 @@
       <SubSystem>Windows</SubSystem>
       <GenerateDebugInformation>true</GenerateDebugInformation>
       <AdditionalDependencies>opengl32.lib;%(AdditionalDependencies)</AdditionalDependencies>
-      <ImportLibrary>..\bin\Debug-windows-{cfg.architecture}\AreliosRenderer\AreliosRenderer.lib</ImportLibrary>
+      <ImportLibrary>..\bin\Debug-windows-x86_64\AreliosRenderer\AreliosRenderer.lib</ImportLibrary>
     </Link>
     <PostBuildEvent>
-      <Command>IF EXIST ..\bin\Debug-windows-{cfg.architecture}\AreliosRenderer\AreliosRenderer.dll\ (xcopy /Q /E /Y /I ..\bin\Debug-windows-{cfg.architecture}\AreliosRenderer\AreliosRenderer.dll ..\bin\Debug-windows-{cfg.architecture}\Sandbox &gt; nul) ELSE (xcopy /Q /Y /I ..\bin\Debug-windows-{cfg.architecture}\AreliosRenderer\AreliosRenderer.dll ..\bin\Debug-windows-{cfg.architecture}\Sandbox &gt; nul)</Command>
+      <Command>IF EXIST ..\bin\Debug-windows-x86_64\AreliosRenderer\AreliosRenderer.dll\ (xcopy /Q /E /Y /I ..\bin\Debug-windows-x86_64\AreliosRenderer\AreliosRenderer.dll ..\bin\Debug-windows-x86_64\Sandbox &gt; nul) ELSE (xcopy /Q /Y /I ..\bin\Debug-windows-x86_64\AreliosRenderer\AreliosRenderer.dll ..\bin\Debug-windows-x86_64\Sandbox &gt; nul)</Command>
     </PostBuildEvent>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
@@ -110,8 +109,7 @@
       <IntrinsicFunctions>true</IntrinsicFunctions>
       <MinimalRebuild>false</MinimalRebuild>
       <StringPooling>true</StringPooling>
-      <RuntimeLibrary>MultiThreaded</RuntimeLibrary>
-      <AdditionalOptions>/MD %(AdditionalOptions)</AdditionalOptions>
+      <RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
       <LanguageStandard>stdcpp14</LanguageStandard>
       <ExternalWarningLevel>Level3</ExternalWarningLevel>
     </ClCompile>
@@ -120,10 +118,10 @@
       <EnableCOMDATFolding>true</EnableCOMDATFolding>
       <OptimizeReferences>true</OptimizeReferences>
       <AdditionalDependencies>opengl32.lib;%(AdditionalDependencies)</AdditionalDependencies>
-      <ImportLibrary>..\bin\Release-windows-{cfg.architecture}\AreliosRenderer\AreliosRenderer.lib</ImportLibrary>
+      <ImportLibrary>..\bin\Release-windows-x86_64\AreliosRenderer\AreliosRenderer.lib</ImportLibrary>
     </Link>
     <PostBuildEvent>
-      <Command>IF EXIST ..\bin\Release-windows-{cfg.architecture}\AreliosRenderer\AreliosRenderer.dll\ (xcopy /Q /E /Y /I ..\bin\Release-windows-{cfg.architecture}\AreliosRenderer\AreliosRenderer.dll ..\bin\Release-windows-{cfg.architecture}\Sandbox &gt; nul) ELSE (xcopy /Q /Y /I ..\bin\Release-windows-{cfg.architecture}\AreliosRenderer\AreliosRenderer.dll ..\bin\Release-windows-{cfg.architecture}\Sandbox &gt; nul)</Command>
+      <Command>IF EXIST ..\bin\Release-windows-x86_64\AreliosRenderer\AreliosRenderer.dll\ (xcopy /Q /E /Y /I ..\bin\Release-windows-x86_64\AreliosRenderer\AreliosRenderer.dll ..\bin\Release-windows-x86_64\Sandbox &gt; nul) ELSE (xcopy /Q /Y /I ..\bin\Release-windows-x86_64\AreliosRenderer\AreliosRenderer.dll ..\bin\Release-windows-x86_64\Sandbox &gt; nul)</Command>
     </PostBuildEvent>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Dist|x64'">
@@ -138,8 +136,7 @@
       <IntrinsicFunctions>true</IntrinsicFunctions>
       <MinimalRebuild>false</MinimalRebuild>
       <StringPooling>true</StringPooling>
-      <RuntimeLibrary>MultiThreaded</RuntimeLibrary>
-      <AdditionalOptions>/MD %(AdditionalOptions)</AdditionalOptions>
+      <RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
       <LanguageStandard>stdcpp14</LanguageStandard>
       <ExternalWarningLevel>Level3</ExternalWarningLevel>
     </ClCompile>
@@ -148,10 +145,10 @@
       <EnableCOMDATFolding>true</EnableCOMDATFolding>
       <OptimizeReferences>true</OptimizeReferences>
       <AdditionalDependencies>opengl32.lib;%(AdditionalDependencies)</AdditionalDependencies>
-      <ImportLibrary>..\bin\Dist-windows-{cfg.architecture}\AreliosRenderer\AreliosRenderer.lib</ImportLibrary>
+      <ImportLibrary>..\bin\Dist-windows-x86_64\AreliosRenderer\AreliosRenderer.lib</ImportLibrary>
     </Link>
     <PostBuildEvent>
-      <Command>IF EXIST ..\bin\Dist-windows-{cfg.architecture}\AreliosRenderer\AreliosRenderer.dll\ (xcopy /Q /E /Y /I ..\bin\Dist-windows-{cfg.architecture}\AreliosRenderer\AreliosRenderer.dll ..\bin\Dist-windows-{cfg.architecture}\Sandbox &gt; nul) ELSE (xcopy /Q /Y /I ..\bin\Dist-windows-{cfg.architecture}\AreliosRenderer\AreliosRenderer.dll ..\bin\Dist-windows-{cfg.architecture}\Sandbox &gt; nul)</Command>
+      <Command>IF EXIST ..\bin\Dist-windows-x86_64\AreliosRenderer\AreliosRenderer.dll\ (xcopy /Q /E /Y /I ..\bin\Dist-windows-x86_64\AreliosRenderer\AreliosRenderer.dll ..\bin\Dist-windows-x86_64\Sandbox &gt; nul) ELSE (xcopy /Q /Y /I ..\bin\Dist-windows-x86_64\AreliosRenderer\AreliosRenderer.dll ..\bin\Dist-windows-x86_64\Sandbox &gt; nul)</Command>
     </PostBuildEvent>
   </ItemDefinitionGroup>
   <ItemGroup>

@@ -247,8 +247,6 @@ namespace Arelios {
         ImGuiIO& io = ImGui::GetIO();
         io.AddInputCharacter((unsigned int)keyTypedEvent.GetKeyCode());
 
-        std::cout << "KeyTyped" << std::endl;
-
         return false;
     }
 

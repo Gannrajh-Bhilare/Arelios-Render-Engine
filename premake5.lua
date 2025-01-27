@@ -8,7 +8,7 @@ workspace "AreliosRenderer"
 		"Dist"
 	}
 
-outputdir = "%{cfg.buildcfg}-%{cfg.system}-{cfg.architecture}"
+outputdir = "%{cfg.buildcfg}-%{cfg.system}-%{cfg.architecture}"
 
 --Include directories relative to root folder (solution directory)
 IncludeDir = {}
@@ -24,6 +24,7 @@ project "AreliosRenderer"
 	location "AreliosRenderer"
 	kind "SharedLib"
 	language "C++"
+	staticruntime "Off"
 
 	targetdir ("bin/" .. outputdir .. "/%{prj.name}")
 	objdir ("bin-int/" .. outputdir .. "/%{prj.name}")
@@ -55,7 +56,6 @@ project "AreliosRenderer"
 
 	filter "system:windows"
 		cppdialect "c++14"
-		staticruntime "On"
 		systemversion "latest"
 
 		defines
@@ -76,23 +76,24 @@ project "AreliosRenderer"
 			"AS_DEBUG",
 			"AS_ENABLE_ASSERTS"
 		}
-		buildoptions "/MDd"
+		runtime "Debug"
 		symbols "On"
 
 	filter "configurations:Release"
 		defines "AS_Release"
-		buildoptions "/MD"
+		runtime "Release"
 		optimize "On"
 
 	filter "configurations:Dist"
 		defines "AS_DIST"
-		buildoptions "/MD"
+		runtime "Release"
 		optimize "On"
 
 project "Sandbox"
 	location "Sandbox"
 	kind "ConsoleApp"
 	language "C++"
+	staticruntime "Off"
 
 	targetdir ("bin/" .. outputdir .. "/%{prj.name}")
 	objdir ("bin-int/" .. outputdir .. "/%{prj.name}")
@@ -115,7 +116,6 @@ project "Sandbox"
 
 	filter "system:windows"
 		cppdialect "c++14"
-		staticruntime "On"
 		systemversion "latest"
 
 		defines
@@ -125,12 +125,15 @@ project "Sandbox"
 
 	filter "configurations:Debug"
 		defines "AS_DEBUG"
+		runtime "Debug"
 		symbols "On"
 
 	filter "configurations:Release"
 		defines "AS_Release"
+		runtime "Release"
 		optimize "On"
 
 	filter "configurations:Dist"
 		defines "AS_DIST"
+		runtime "Release"
 		optimize "On"

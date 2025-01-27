@@ -22,6 +22,7 @@ namespace Arelios {
 	void LayerStack::PushOverlay(Layer* overlay)
 	{
 		m_Layers.emplace_back(overlay);
+		m_LayerInsert = m_Layers.begin();
 	}
 
 	void LayerStack::PopLayer(Layer* layer)
