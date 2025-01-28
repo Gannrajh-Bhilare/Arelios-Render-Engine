@@ -46,6 +46,9 @@
     <ClInclude Include="src\Arelios\ImGui\ImGuiLayer.h">
       <Filter>Arelios\ImGui</Filter>
     </ClInclude>
+    <ClInclude Include="src\Arelios\Input.h">
+      <Filter>Arelios</Filter>
+    </ClInclude>
     <ClInclude Include="src\Arelios\Layer.h">
       <Filter>Arelios</Filter>
     </ClInclude>
@@ -60,6 +63,9 @@
     </ClInclude>
     <ClInclude Include="src\Platform\OpenGL\imGuiOpenGLRenderer.h">
       <Filter>Platform\OpenGL</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Platform\Windows\WindowInput.h">
+      <Filter>Platform\Windows</Filter>
     </ClInclude>
     <ClInclude Include="src\Platform\Windows\WindowsWindow.h">
       <Filter>Platform\Windows</Filter>
@@ -84,6 +90,9 @@
     </ClCompile>
     <ClCompile Include="src\Platform\OpenGL\imGuiOpenGLRenderer.cpp">
       <Filter>Platform\OpenGL</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Platform\Windows\WindowInput.cpp">
+      <Filter>Platform\Windows</Filter>
     </ClCompile>
     <ClCompile Include="src\Platform\Windows\WindowsWindow.cpp">
       <Filter>Platform\Windows</Filter>

@@ -1,5 +1,6 @@
 workspace "AreliosRenderer"
 	architecture "x64"
+	startproject "Sandbox"
 
 	configurations
 	{
@@ -55,7 +56,7 @@ project "AreliosRenderer"
 	}
 
 	filter "system:windows"
-		cppdialect "c++14"
+		cppdialect "c++17"
 		systemversion "latest"
 
 		defines
@@ -67,7 +68,7 @@ project "AreliosRenderer"
 
 		postbuildcommands
 		{
-			("{COPY} %{cfg.buildtarget.relpath} ../bin/" .. outputdir .. "/Sandbox")
+			("{COPY} %{cfg.buildtarget.relpath} \"../bin/" .. outputdir .. "/Sandbox/\"")
 		}
 
 	filter "configurations:Debug"
@@ -115,7 +116,7 @@ project "Sandbox"
 	}
 
 	filter "system:windows"
-		cppdialect "c++14"
+		cppdialect "c++17"
 		systemversion "latest"
 
 		defines

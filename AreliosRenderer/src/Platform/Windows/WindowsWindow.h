@@ -31,6 +31,8 @@ namespace Arelios {
 
 		void SetVSync(bool enabled) override;
 		bool IsVSync() const override;
+
+		inline void* GetNativeWindow() override { return m_Window; }
 	private:
 		virtual void Init(const WindowProp& props);
 		virtual void ShutDown();

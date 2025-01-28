@@ -84,7 +84,7 @@
       <DebugInformationFormat>EditAndContinue</DebugInformationFormat>
       <Optimization>Disabled</Optimization>
       <RuntimeLibrary>MultiThreadedDebugDLL</RuntimeLibrary>
-      <LanguageStandard>stdcpp14</LanguageStandard>
+      <LanguageStandard>stdcpp17</LanguageStandard>
       <ExternalWarningLevel>Level3</ExternalWarningLevel>
     </ClCompile>
     <Link>
@@ -94,7 +94,7 @@
       <ImportLibrary>..\bin\Debug-windows-x86_64\AreliosRenderer\AreliosRenderer.lib</ImportLibrary>
     </Link>
     <PostBuildEvent>
-      <Command>IF EXIST ..\bin\Debug-windows-x86_64\AreliosRenderer\AreliosRenderer.dll\ (xcopy /Q /E /Y /I ..\bin\Debug-windows-x86_64\AreliosRenderer\AreliosRenderer.dll ..\bin\Debug-windows-x86_64\Sandbox &gt; nul) ELSE (xcopy /Q /Y /I ..\bin\Debug-windows-x86_64\AreliosRenderer\AreliosRenderer.dll ..\bin\Debug-windows-x86_64\Sandbox &gt; nul)</Command>
+      <Command>IF EXIST ..\bin\Debug-windows-x86_64\AreliosRenderer\AreliosRenderer.dll\ (xcopy /Q /E /Y /I ..\bin\Debug-windows-x86_64\AreliosRenderer\AreliosRenderer.dll "..\bin\Debug-windows-x86_64\Sandbox\" &gt; nul) ELSE (xcopy /Q /Y /I ..\bin\Debug-windows-x86_64\AreliosRenderer\AreliosRenderer.dll "..\bin\Debug-windows-x86_64\Sandbox\" &gt; nul)</Command>
     </PostBuildEvent>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
@@ -110,7 +110,7 @@
       <MinimalRebuild>false</MinimalRebuild>
       <StringPooling>true</StringPooling>
       <RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
-      <LanguageStandard>stdcpp14</LanguageStandard>
+      <LanguageStandard>stdcpp17</LanguageStandard>
       <ExternalWarningLevel>Level3</ExternalWarningLevel>
     </ClCompile>
     <Link>
@@ -121,7 +121,7 @@
       <ImportLibrary>..\bin\Release-windows-x86_64\AreliosRenderer\AreliosRenderer.lib</ImportLibrary>
     </Link>
     <PostBuildEvent>
-      <Command>IF EXIST ..\bin\Release-windows-x86_64\AreliosRenderer\AreliosRenderer.dll\ (xcopy /Q /E /Y /I ..\bin\Release-windows-x86_64\AreliosRenderer\AreliosRenderer.dll ..\bin\Release-windows-x86_64\Sandbox &gt; nul) ELSE (xcopy /Q /Y /I ..\bin\Release-windows-x86_64\AreliosRenderer\AreliosRenderer.dll ..\bin\Release-windows-x86_64\Sandbox &gt; nul)</Command>
+      <Command>IF EXIST ..\bin\Release-windows-x86_64\AreliosRenderer\AreliosRenderer.dll\ (xcopy /Q /E /Y /I ..\bin\Release-windows-x86_64\AreliosRenderer\AreliosRenderer.dll "..\bin\Release-windows-x86_64\Sandbox\" &gt; nul) ELSE (xcopy /Q /Y /I ..\bin\Release-windows-x86_64\AreliosRenderer\AreliosRenderer.dll "..\bin\Release-windows-x86_64\Sandbox\" &gt; nul)</Command>
     </PostBuildEvent>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Dist|x64'">
@@ -137,7 +137,7 @@
       <MinimalRebuild>false</MinimalRebuild>
       <StringPooling>true</StringPooling>
       <RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
-      <LanguageStandard>stdcpp14</LanguageStandard>
+      <LanguageStandard>stdcpp17</LanguageStandard>
       <ExternalWarningLevel>Level3</ExternalWarningLevel>
     </ClCompile>
     <Link>
@@ -148,7 +148,7 @@
       <ImportLibrary>..\bin\Dist-windows-x86_64\AreliosRenderer\AreliosRenderer.lib</ImportLibrary>
     </Link>
     <PostBuildEvent>
-      <Command>IF EXIST ..\bin\Dist-windows-x86_64\AreliosRenderer\AreliosRenderer.dll\ (xcopy /Q /E /Y /I ..\bin\Dist-windows-x86_64\AreliosRenderer\AreliosRenderer.dll ..\bin\Dist-windows-x86_64\Sandbox &gt; nul) ELSE (xcopy /Q /Y /I ..\bin\Dist-windows-x86_64\AreliosRenderer\AreliosRenderer.dll ..\bin\Dist-windows-x86_64\Sandbox &gt; nul)</Command>
+      <Command>IF EXIST ..\bin\Dist-windows-x86_64\AreliosRenderer\AreliosRenderer.dll\ (xcopy /Q /E /Y /I ..\bin\Dist-windows-x86_64\AreliosRenderer\AreliosRenderer.dll "..\bin\Dist-windows-x86_64\Sandbox\" &gt; nul) ELSE (xcopy /Q /Y /I ..\bin\Dist-windows-x86_64\AreliosRenderer\AreliosRenderer.dll "..\bin\Dist-windows-x86_64\Sandbox\" &gt; nul)</Command>
     </PostBuildEvent>
   </ItemDefinitionGroup>
   <ItemGroup>
@@ -161,11 +161,13 @@
     <ClInclude Include="src\Arelios\Events\KeyEvents.h" />
     <ClInclude Include="src\Arelios\Events\MouseEvents.h" />
     <ClInclude Include="src\Arelios\ImGui\ImGuiLayer.h" />
+    <ClInclude Include="src\Arelios\Input.h" />
     <ClInclude Include="src\Arelios\Layer.h" />
     <ClInclude Include="src\Arelios\LayerStack.h" />
     <ClInclude Include="src\Arelios\Renderer.h" />
     <ClInclude Include="src\Arelios\Window.h" />
     <ClInclude Include="src\Platform\OpenGL\imGuiOpenGLRenderer.h" />
+    <ClInclude Include="src\Platform\Windows\WindowInput.h" />
     <ClInclude Include="src\Platform\Windows\WindowsWindow.h" />
     <ClInclude Include="src\areliospch.h" />
   </ItemGroup>
@@ -176,6 +178,7 @@
     <ClCompile Include="src\Arelios\LayerStack.cpp" />
     <ClCompile Include="src\Arelios\Renderer.cpp" />
     <ClCompile Include="src\Platform\OpenGL\imGuiOpenGLRenderer.cpp" />
+    <ClCompile Include="src\Platform\Windows\WindowInput.cpp" />
     <ClCompile Include="src\Platform\Windows\WindowsWindow.cpp" />
     <ClCompile Include="src\areliospch.cpp">
       <PrecompiledHeader>Create</PrecompiledHeader>
