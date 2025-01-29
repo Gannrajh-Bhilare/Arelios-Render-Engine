@@ -37,7 +37,7 @@ project "AreliosRenderer"
 	files
 	{
 		"%{prj.name}/src/**.h",
-		"%{prj.name}/src/**.cpp"
+		"%{prj.name}/src/**.cpp",
 	}
 
 	includedirs
@@ -54,7 +54,6 @@ project "AreliosRenderer"
 		"GLFW",
 		"Glad",
 		"ImGui",
-		"glm",
 		"opengl32.lib"
 	}
 
@@ -111,13 +110,12 @@ project "Sandbox"
 	includedirs
 	{
 		"AreliosRenderer/src",
-		"AreliosRenderer/vendor/glm"
+		"%{IncludeDir.glm}"
 	}
 
 	links
 	{
-		"AreliosRenderer",
-		"glm"
+		"AreliosRenderer"
 	}
 
 	filter "system:windows"

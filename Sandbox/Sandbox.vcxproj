@@ -140,9 +140,6 @@
     <ProjectReference Include="..\AreliosRenderer\AreliosRenderer.vcxproj">
       <Project>{CB6B4043-37F7-AD07-4008-31FCAC120A08}</Project>
     </ProjectReference>
-    <ProjectReference Include="..\AreliosRenderer\vendor\glm\glm.vcxproj">
-      <Project>{6577880B-D180-887C-5AFC-9E7CC604947C}</Project>
-    </ProjectReference>
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
