@@ -37,6 +37,12 @@
     <ClInclude Include="src\Arelios\Events\Events.h">
       <Filter>Arelios\Events</Filter>
     </ClInclude>
+    <ClInclude Include="src\Arelios\Events\Input.h">
+      <Filter>Arelios\Events</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Arelios\Events\KeyCodes.h">
+      <Filter>Arelios\Events</Filter>
+    </ClInclude>
     <ClInclude Include="src\Arelios\Events\KeyEvents.h">
       <Filter>Arelios\Events</Filter>
     </ClInclude>
@@ -45,9 +51,6 @@
     </ClInclude>
     <ClInclude Include="src\Arelios\ImGui\ImGuiLayer.h">
       <Filter>Arelios\ImGui</Filter>
-    </ClInclude>
-    <ClInclude Include="src\Arelios\Input.h">
-      <Filter>Arelios</Filter>
     </ClInclude>
     <ClInclude Include="src\Arelios\Layer.h">
       <Filter>Arelios</Filter>

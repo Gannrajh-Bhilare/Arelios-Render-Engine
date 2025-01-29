@@ -5,7 +5,9 @@
 #include "Arelios/Application.h"
 #include "Arelios/ImGui/ImGuiLayer.h"
 #include "Arelios/Renderer.h"
-#include "Arelios/Input.h"
+
+#include "Arelios/Events/Input.h"
+#include "Arelios/Events/KeyCodes.h"
 
 //---Entry Point-------------------------------
 #include "Arelios/EntryPoint.h"

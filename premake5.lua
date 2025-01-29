@@ -16,6 +16,7 @@ IncludeDir = {}
 IncludeDir["GLFW"] = "AreliosRenderer/vendor/GLFW/include"
 IncludeDir["Glad"] = "AreliosRenderer/vendor/Glad/include"
 IncludeDir["ImGui"] = "AreliosRenderer/vendor/imgui"
+IncludeDir["glm"] = "AreliosRenderer/vendor/glm"
 
 include "AreliosRenderer/vendor/GLFW"
 include "AreliosRenderer/vendor/Glad"
@@ -44,7 +45,8 @@ project "AreliosRenderer"
 		"%{prj.name}/src",
 		"%{IncludeDir.GLFW}",
 		"%{IncludeDir.Glad}",
-		"%{IncludeDir.ImGui}"
+		"%{IncludeDir.ImGui}",
+		"%{IncludeDir.glm}"
 	}
 
 	links
@@ -52,6 +54,7 @@ project "AreliosRenderer"
 		"GLFW",
 		"Glad",
 		"ImGui",
+		"glm",
 		"opengl32.lib"
 	}
 
@@ -107,12 +110,14 @@ project "Sandbox"
 
 	includedirs
 	{
-		"AreliosRenderer/src"
+		"AreliosRenderer/src",
+		"AreliosRenderer/vendor/glm"
 	}
 
 	links
 	{
-		"AreliosRenderer"
+		"AreliosRenderer",
+		"glm"
 	}
 
 	filter "system:windows"

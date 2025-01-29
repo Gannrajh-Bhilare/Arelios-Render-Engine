@@ -29,9 +29,4 @@ namespace Arelios {
 		virtual float GetMousePosXImpl() = 0;
 		virtual float GetMousePosYImpl() = 0;
 	};
-
-	enum class KeyCode {
-		NONE = 0,
-		Space,
-	};
 }

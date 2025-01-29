@@ -80,7 +80,7 @@
       <PrecompiledHeaderFile>areliospch.h</PrecompiledHeaderFile>
       <WarningLevel>Level3</WarningLevel>
       <PreprocessorDefinitions>AS_PLATFORM_WINDOWS;AS_BUILD_DLL;GLFW_INCLUDE_NONE;AS_DEBUG;AS_ENABLE_ASSERTS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
-      <AdditionalIncludeDirectories>src;vendor\GLFW\include;vendor\Glad\include;vendor\imgui;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>src;vendor\GLFW\include;vendor\Glad\include;vendor\imgui;vendor\glm;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <DebugInformationFormat>EditAndContinue</DebugInformationFormat>
       <Optimization>Disabled</Optimization>
       <RuntimeLibrary>MultiThreadedDebugDLL</RuntimeLibrary>
@@ -103,7 +103,7 @@
       <PrecompiledHeaderFile>areliospch.h</PrecompiledHeaderFile>
       <WarningLevel>Level3</WarningLevel>
       <PreprocessorDefinitions>AS_PLATFORM_WINDOWS;AS_BUILD_DLL;GLFW_INCLUDE_NONE;AS_Release;%(PreprocessorDefinitions)</PreprocessorDefinitions>
-      <AdditionalIncludeDirectories>src;vendor\GLFW\include;vendor\Glad\include;vendor\imgui;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>src;vendor\GLFW\include;vendor\Glad\include;vendor\imgui;vendor\glm;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <Optimization>Full</Optimization>
       <FunctionLevelLinking>true</FunctionLevelLinking>
       <IntrinsicFunctions>true</IntrinsicFunctions>
@@ -130,7 +130,7 @@
       <PrecompiledHeaderFile>areliospch.h</PrecompiledHeaderFile>
       <WarningLevel>Level3</WarningLevel>
       <PreprocessorDefinitions>AS_PLATFORM_WINDOWS;AS_BUILD_DLL;GLFW_INCLUDE_NONE;AS_DIST;%(PreprocessorDefinitions)</PreprocessorDefinitions>
-      <AdditionalIncludeDirectories>src;vendor\GLFW\include;vendor\Glad\include;vendor\imgui;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>src;vendor\GLFW\include;vendor\Glad\include;vendor\imgui;vendor\glm;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <Optimization>Full</Optimization>
       <FunctionLevelLinking>true</FunctionLevelLinking>
       <IntrinsicFunctions>true</IntrinsicFunctions>
@@ -158,10 +158,11 @@
     <ClInclude Include="src\Arelios\EntryPoint.h" />
     <ClInclude Include="src\Arelios\Events\ApplicationEvents.h" />
     <ClInclude Include="src\Arelios\Events\Events.h" />
+    <ClInclude Include="src\Arelios\Events\Input.h" />
+    <ClInclude Include="src\Arelios\Events\KeyCodes.h" />
     <ClInclude Include="src\Arelios\Events\KeyEvents.h" />
     <ClInclude Include="src\Arelios\Events\MouseEvents.h" />
     <ClInclude Include="src\Arelios\ImGui\ImGuiLayer.h" />
-    <ClInclude Include="src\Arelios\Input.h" />
     <ClInclude Include="src\Arelios\Layer.h" />
     <ClInclude Include="src\Arelios\LayerStack.h" />
     <ClInclude Include="src\Arelios\Renderer.h" />
@@ -193,6 +194,9 @@
     </ProjectReference>
     <ProjectReference Include="vendor\imgui\ImGui.vcxproj">
       <Project>{C0FF640D-2C14-8DBE-F595-301E616989EF}</Project>
+    </ProjectReference>
+    <ProjectReference Include="vendor\glm\glm.vcxproj">
+      <Project>{6577880B-D180-887C-5AFC-9E7CC604947C}</Project>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
