@@ -1,9 +1,10 @@
 #include "areliospch.h"
 #include "ImGuiLayer.h"
+#include "Arelios/Application.h"
 
 #include "imgui.h"
-#include "Platform/OpenGL/imGuiOpenGLRenderer.h"
-#include "Arelios/Application.h"
+#include "backends/imgui_impl_glfw.h"
+#include "backends/imgui_impl_opengl3.h"
 
 #include <GLFW/glfw3.h>
 #include <glad/glad.h>
@@ -158,44 +159,40 @@ namespace Arelios {
 	
 	ImGuiLayer::~ImGuiLayer()
 	{
-
 	}
 
 	void ImGuiLayer::OnAttach()
 	{
-		ImGui::CreateContext();
-		ImGui::StyleColorsDark();
+        ImGui::CreateContext();
+        ImGuiIO& io = ImGui::GetIO(); (void)io;
+        io.ConfigFlags |= ImGuiConfigFlags_NavEnableKeyboard;
+        io.ConfigFlags |= ImGuiConfigFlags_NavEnableGamepad;
 
-		ImGuiIO& io = ImGui::GetIO();
-		io.BackendFlags |= ImGuiBackendFlags_HasMouseCursors;
-		io.BackendFlags |= ImGuiBackendFlags_HasSetMousePos;
+        ImGui::StyleColorsDark;
 
-		ImGui_ImplOpenGL3_Init("#version 410");
+        ImGui_ImplGlfw_InitForOpenGL(static_cast<GLFWwindow*>(Application::GetInstance().GetWindow().GetNativeWindow()), true);
+        ImGui_ImplOpenGL3_Init("#version 410 core");
+
+        bool showDemoWindow = true;
+        ImVec4 clearColor = ImVec4(0.45f, 0.55f, 0.60f, 1.0f);
 	}
 
 	void ImGuiLayer::OnDetach()
 	{
-
+        ImGui_ImplOpenGL3_Shutdown();
+        ImGui_ImplGlfw_Shutdown();
+        ImGui::DestroyContext();
 	}
 
 	void ImGuiLayer::OnUpdate()
 	{
-		ImGuiIO& io = ImGui::GetIO();
-		Application& application = Application::GetInstance();
-		io.DisplaySize = ImVec2(application.GetWindow().GetWidth(), application.GetWindow().GetHeight()); 
+        ImGui_ImplOpenGL3_NewFrame();
+        ImGui_ImplGlfw_NewFrame();
+        ImGui::NewFrame();
 
-		float time = (float)glfwGetTime();
-		io.DeltaTime = m_Time > 0.0f ? (time - m_Time) : (1.0f / 60.0f);
-		m_Time = time;
-
-		ImGui_ImplOpenGL3_NewFrame();
-		ImGui::NewFrame();
-
-		static bool show = true;
-		ImGui::ShowDemoWindow(&show);
-
-		ImGui::Render();
-		ImGui_ImplOpenGL3_RenderDrawData(ImGui::GetDrawData());
+        ImGui::ShowDemoWindow((bool*)true);
+        ImGui::Render();
+        ImGui_ImplOpenGL3_RenderDrawData(ImGui::GetDrawData());
 	}
 
 	void ImGuiLayer::OnEvent(Event& e)

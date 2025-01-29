@@ -23,8 +23,11 @@ project "ImGui"
     filter "system:windows"
     systemversion "latest"
     cppdialect "c++17"
-    staticruntime "On"
+    staticruntime "Off"
+
+    filter {"system:windows", "configurations:Debug"}
+        runtime "Debug"
 
     filter { "system:windows", "configurations:Release" }
-        buildoptions "/MT"
+        runtime "Release"
  

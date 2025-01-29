@@ -167,18 +167,17 @@
     <ClInclude Include="src\Arelios\LayerStack.h" />
     <ClInclude Include="src\Arelios\Renderer.h" />
     <ClInclude Include="src\Arelios\Window.h" />
-    <ClInclude Include="src\Platform\OpenGL\imGuiOpenGLRenderer.h" />
     <ClInclude Include="src\Platform\Windows\WindowInput.h" />
     <ClInclude Include="src\Platform\Windows\WindowsWindow.h" />
     <ClInclude Include="src\areliospch.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="src\Arelios\Application.cpp" />
+    <ClCompile Include="src\Arelios\ImGui\ImGuiInclusion.cpp" />
     <ClCompile Include="src\Arelios\ImGui\ImGuiLayer.cpp" />
     <ClCompile Include="src\Arelios\Layer.cpp" />
     <ClCompile Include="src\Arelios\LayerStack.cpp" />
     <ClCompile Include="src\Arelios\Renderer.cpp" />
-    <ClCompile Include="src\Platform\OpenGL\imGuiOpenGLRenderer.cpp" />
     <ClCompile Include="src\Platform\Windows\WindowInput.cpp" />
     <ClCompile Include="src\Platform\Windows\WindowsWindow.cpp" />
     <ClCompile Include="src\areliospch.cpp">
