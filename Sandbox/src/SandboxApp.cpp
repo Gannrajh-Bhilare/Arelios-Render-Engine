@@ -15,7 +15,9 @@ public:
 
 	void OnImGuiRender() override
 	{
-		ImGui::Begin("Test GUI");
+		bool notImp = false;
+		ImGui::Begin("Test GUI", &notImp, 0);
+
 		ImGui::Text("Hello World");
 		ImGui::End();
 	}

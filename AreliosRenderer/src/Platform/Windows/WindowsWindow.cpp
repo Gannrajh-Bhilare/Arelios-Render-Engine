@@ -7,6 +7,8 @@
 #include "Arelios/Events/MouseEvents.h"
 #include "Arelios/Events/KeyEvents.h"
 
+#include "Platform/OpenGL/OpenGLRendererContext.h"
+
 #include <glad/glad.h>
 
 namespace Arelios {
@@ -53,11 +55,9 @@ namespace Arelios {
 		}
 
 		m_Window = glfwCreateWindow(m_WindowData.width, m_WindowData.height, m_WindowData.title.c_str(), NULL, NULL);
-		glfwMakeContextCurrent(m_Window);
-
-		//Loading GLAD for OpenGL
-		int status = gladLoadGLLoader((GLADloadproc)glfwGetProcAddress);
-		AS_ASSERT(status);
+		
+		m_RendererContext = new OpenGLRendererContext(m_Window);
+		m_RendererContext->Init();
 
 		glfwSetWindowUserPointer(m_Window, &m_WindowData);
 
@@ -160,7 +160,7 @@ namespace Arelios {
 	void WindowsWindow::OnUpdate()
 	{
 		glfwPollEvents();
-		glfwSwapBuffers(m_Window);
+		m_RendererContext->SwapBuffers();
 	}
 
 	void WindowsWindow::SetVSync(bool enabled)

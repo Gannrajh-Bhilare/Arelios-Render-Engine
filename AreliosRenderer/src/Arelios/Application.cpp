@@ -19,6 +19,21 @@ namespace Arelios {
 
 		imGuiLayer = new ImGuiLayer();
 		PushOverlay(imGuiLayer);
+
+		float vertices[] =
+		{
+			-0.5f, -0.5f,
+			 0.5f, -0.5f,
+			 0.0f,  0.5f
+		};
+
+		unsigned int vb;
+		glGenBuffers(1, &vb);
+		glBindBuffer(GL_ARRAY_BUFFER, vb);
+		glBufferData(GL_ARRAY_BUFFER, 6 * sizeof(float), vertices, GL_STATIC_DRAW);
+
+		glEnableVertexAttribArray(0);
+		glVertexAttribPointer(0, 2, GL_FLOAT, false, 2 * sizeof(float), (void*)0);
 	}
 
 	Application::~Application()
@@ -49,6 +64,8 @@ namespace Arelios {
 			{
 				layer->OnUpdate();
 			}
+
+			glDrawArrays(GL_TRIANGLES, 0, 3);
 
 			imGuiLayer->Begin();
 			for (Layer* layer : m_LayerStack)

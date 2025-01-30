@@ -28,7 +28,7 @@ namespace Arelios {
         io.ConfigFlags |= ImGuiConfigFlags_DockingEnable;
         io.ConfigFlags |= ImGuiConfigFlags_ViewportsEnable;
 
-        ImGui::StyleColorsDark;
+        ImGui::StyleColorsDark();
 
         ImGuiStyle& style = ImGui::GetStyle();
         if (io.ConfigFlags & ImGuiConfigFlags_ViewportsEnable)
@@ -58,16 +58,20 @@ namespace Arelios {
     void ImGuiLayer::OnImGuiRender()
     {
         bool showDemoWindow = true;
-
         ImGui::ShowDemoWindow(&showDemoWindow);
     }
 
     void ImGuiLayer::End()
     {
         ImGuiIO& io = ImGui::GetIO();
+        GLFWwindow* window = static_cast<GLFWwindow*>(Application::GetInstance().GetWindow().GetNativeWindow());
 
         ImGui::Render();
         ImGui_ImplOpenGL3_RenderDrawData(ImGui::GetDrawData());
+
+        int displayW, displayH;
+        glfwGetFramebufferSize(window, &displayW, &displayH);
+        glViewport(0, 0, displayW, displayH);
 
         if (io.ConfigFlags & ImGuiConfigFlags_ViewportsEnable)
         {

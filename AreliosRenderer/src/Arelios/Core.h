@@ -7,8 +7,6 @@
 	#else
 		#define   __declspec(dllimport)
 	#endif
-#else
-	#define AS_BUILD_DLL
 #endif
 #else
 	#error Platform Not Supported!

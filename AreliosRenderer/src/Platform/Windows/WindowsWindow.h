@@ -1,6 +1,7 @@
 #pragma once
 
 #include "Arelios/Window.h"
+#include "Arelios/Renderer/RendererContext.h"
 #include <GLFW/glfw3.h>
 
 namespace Arelios {
@@ -8,6 +9,7 @@ namespace Arelios {
 	class WindowsWindow : public Window {
 	private:
 		GLFWwindow* m_Window;
+		RendererContext* m_RendererContext;
 		
 		struct WindowData {
 			std::string title;

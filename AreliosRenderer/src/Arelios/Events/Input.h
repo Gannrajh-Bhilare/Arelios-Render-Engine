@@ -14,9 +14,9 @@ namespace Arelios {
 		static bool IsMouseReleased(int mouseCode) { return s_Instance->IsKeyPressedImpl(mouseCode); }
 
 		//Mouse position functions
-		static std::pair<int, int> GetMousePos() { return s_Instance->GetMousePosImpl(); }
-		static int GetMousePosX() { return s_Instance->GetMousePosXImpl(); }
-		static int GetMousePosY() { return s_Instance->GetMousePosYImpl(); }
+		static std::pair<float, float> GetMousePos() { return s_Instance->GetMousePosImpl(); }
+		static float GetMousePosX() { return s_Instance->GetMousePosXImpl(); }
+		static float GetMousePosY() { return s_Instance->GetMousePosYImpl(); }
 	protected:
 		//Input get functions implentation
 		virtual bool IsKeyPressedImpl(int keyCode) = 0;

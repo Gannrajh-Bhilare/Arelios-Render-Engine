@@ -68,6 +68,8 @@
       <Filter>Platform\Windows</Filter>
     </ClInclude>
     <ClInclude Include="src\areliospch.h" />
+    <ClInclude Include="src\Arelios\Renderer\RendererContext.h" />
+    <ClInclude Include="src\Platform\OpenGL\OpenGLRendererContext.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="src\Arelios\Application.cpp">
@@ -95,5 +97,6 @@
       <Filter>Platform\Windows</Filter>
     </ClCompile>
     <ClCompile Include="src\areliospch.cpp" />
+    <ClCompile Include="src\Platform\OpenGL\OpenGLRendererContext.cpp" />
   </ItemGroup>
 </Project>
