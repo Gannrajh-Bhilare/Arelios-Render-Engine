@@ -1,6 +1,6 @@
 #include <iostream>
 #include <Arelios.h>
-#include "glm/glm.hpp"
+#include "imgui/imgui.h"
 
 class TestLayer : public Arelios::Layer {
 public:
@@ -11,6 +11,13 @@ public:
 
 	void OnUpdate() override
 	{
+	}
+
+	void OnImGuiRender() override
+	{
+		ImGui::Begin("Test GUI");
+		ImGui::Text("Hello World");
+		ImGui::End();
 	}
 
 	void OnEvent(Arelios::Event& e) override
@@ -38,7 +45,6 @@ public:
 	{
 		PushLayer(new TestLayer());
 		PushLayer(new Arelios::Renderer());
-		PushOverlay(new Arelios::ImGuiLayer());
 	}
 
 	~Sandbox()

@@ -16,6 +16,9 @@ namespace Arelios {
 
 		m_Window = std::unique_ptr<Window>(Window::Create());
 		m_Window->SetEventCallBack(BIND_EVENT_FN(OnEvent));
+
+		imGuiLayer = new ImGuiLayer();
+		PushOverlay(imGuiLayer);
 	}
 
 	Application::~Application()
@@ -46,6 +49,13 @@ namespace Arelios {
 			{
 				layer->OnUpdate();
 			}
+
+			imGuiLayer->Begin();
+			for (Layer* layer : m_LayerStack)
+			{
+				layer->OnImGuiRender();
+			}
+			imGuiLayer->End();
 
 			m_Window->OnUpdate();
 		}

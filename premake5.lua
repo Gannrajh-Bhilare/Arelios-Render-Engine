@@ -24,9 +24,10 @@ include "AreliosRenderer/vendor/imgui"
 
 project "AreliosRenderer"
 	location "AreliosRenderer"
-	kind "SharedLib"
+	kind "StaticLib"
 	language "C++"
-	staticruntime "Off"
+	cppdialect "c++17"
+	staticruntime "On"
 
 	targetdir ("bin/" .. outputdir .. "/%{prj.name}")
 	objdir ("bin-int/" .. outputdir .. "/%{prj.name}")
@@ -58,7 +59,6 @@ project "AreliosRenderer"
 	}
 
 	filter "system:windows"
-		cppdialect "c++17"
 		systemversion "latest"
 
 		defines
@@ -66,11 +66,6 @@ project "AreliosRenderer"
 			"AS_PLATFORM_WINDOWS",
 			"AS_BUILD_DLL",
 			"GLFW_INCLUDE_NONE"
-		}
-
-		postbuildcommands
-		{
-			("{COPY} %{cfg.buildtarget.relpath} \"../bin/" .. outputdir .. "/Sandbox/\"")
 		}
 
 	filter "configurations:Debug"
@@ -96,7 +91,8 @@ project "Sandbox"
 	location "Sandbox"
 	kind "ConsoleApp"
 	language "C++"
-	staticruntime "Off"
+	cppdialect "c++17"
+	staticruntime "On"
 
 	targetdir ("bin/" .. outputdir .. "/%{prj.name}")
 	objdir ("bin-int/" .. outputdir .. "/%{prj.name}")
@@ -110,6 +106,8 @@ project "Sandbox"
 	includedirs
 	{
 		"AreliosRenderer/src",
+		"AreliosRenderer/vendor",
+		"%{IncludeDir.ImGui}",
 		"%{IncludeDir.glm}"
 	}
 
@@ -119,7 +117,6 @@ project "Sandbox"
 	}
 
 	filter "system:windows"
-		cppdialect "c++17"
 		systemversion "latest"
 
 		defines

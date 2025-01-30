@@ -8,15 +8,18 @@
 #include "Events/KeyEvents.h"
 
 #include "LayerStack.h"
+#include "ImGui/ImGuiLayer.h"
 
 namespace Arelios {
 
-	class ARELIOS_API Application
+	class   Application
 	{
 	private:
 		static Application* s_Instance;
 	private:
 		std::unique_ptr<Window> m_Window;
+		ImGuiLayer* imGuiLayer;
+
 		bool m_IsRunning;
 		LayerStack m_LayerStack;
 	public:

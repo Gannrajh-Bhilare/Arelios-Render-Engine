@@ -5,7 +5,7 @@
 
 namespace Arelios {
 
-	class ARELIOS_API Layer {
+	class Layer {
 	private:
 		std::string m_DebugName;
 	public:
@@ -17,6 +17,8 @@ namespace Arelios {
 
 		virtual void OnUpdate() {}
 		virtual void OnEvent(Event& e) {}
+
+		virtual void OnImGuiRender() {}
 
 		inline const std::string& GetDebugName() { return m_DebugName; }
 	};

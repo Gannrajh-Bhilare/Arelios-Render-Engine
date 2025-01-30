@@ -7,7 +7,7 @@
 
 namespace Arelios {
 
-	class ARELIOS_API ImGuiLayer : public Layer {
+	class ImGuiLayer : public Layer {
 	private:
 		float m_Time = 0.0f;
 	public:
@@ -20,16 +20,9 @@ namespace Arelios {
 		void OnUpdate() override;
 		void OnEvent(Event& e) override;
 
-	private:
-		bool OnKeyPressed(KeyPressedEvent& keyPressedEvent);
-		bool OnKeyReleased(KeyReleasedEvent& keyReleasedEvent);
-		bool OnKeyTyped(KeyTypedEvent& keyTypedEvent);
+		void OnImGuiRender() override;
 
-		bool OnMouseMoved(MouseMovedEvent& mouseMovedEvent);
-		bool OnMousePressed(MouseButtonPressedEvent& mousePressedEvent);
-		bool OnMouseReleased(MouseButtonReleasedEvent& mouseReleasedEvent);
-		bool OnMouseScrolled(MouseScrolledEvent& mouseScrolledEvent);
-
-		bool OnWindowReSize(WindowReSizeEvent& mouseReSizeEvent);
+		void Begin();
+		void End();
 	};
 }

@@ -4,7 +4,7 @@
 
 namespace Arelios {
 
-	class ARELIOS_API MouseMovedEvent : public Event {
+	class MouseMovedEvent : public Event {
 	private:
 		float m_MouseX;
 		float m_MouseY;
@@ -29,7 +29,7 @@ namespace Arelios {
 		virtual int GetCategoryFlags() const override { return EventCategoryMouse | EventCategoryInput; }
 	};
 
-	class ARELIOS_API MouseScrolledEvent : public Event {
+	class MouseScrolledEvent : public Event {
 	private:
 		float m_XOffset;
 		float m_YOffset;
@@ -54,7 +54,7 @@ namespace Arelios {
 		virtual int GetCategoryFlags() const override { return EventCategoryMouse | EventCategoryInput; }
 	};
 
-	class ARELIOS_API MouseButtonEvent : public Event {
+	class MouseButtonEvent : public Event {
 	protected:
 		MouseButtonEvent(int button)
 			:m_Button(button) {}
@@ -66,7 +66,7 @@ namespace Arelios {
 		virtual int GetCategoryFlags() const override { return EventCategoryMouse | EventCategoryInput; }
 	};
 
-	class ARELIOS_API MouseButtonPressedEvent : public MouseButtonEvent {
+	class MouseButtonPressedEvent : public MouseButtonEvent {
 	public:
 		MouseButtonPressedEvent(int button)
 			:MouseButtonEvent(button) {}
@@ -83,7 +83,7 @@ namespace Arelios {
 		virtual const char* GetName() const override { return "MousePressed"; }
 	};
 
-	class ARELIOS_API MouseButtonReleasedEvent : public MouseButtonEvent {
+	class MouseButtonReleasedEvent : public MouseButtonEvent {
 	public:
 		MouseButtonReleasedEvent(int button)
 			:MouseButtonEvent(button) {}

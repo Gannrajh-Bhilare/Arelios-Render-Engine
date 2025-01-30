@@ -27,7 +27,7 @@ namespace Arelios {
 
 #define EVENT_CLASS_CATEGORY(categotry) virtual int GetCategoryFlags() const override { return category; }
 
-	class ARELIOS_API Event {
+	class Event {
 		friend class EventDispatcher;
 	public:
 		bool m_Handled = false;

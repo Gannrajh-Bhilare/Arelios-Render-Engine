@@ -1,11 +1,15 @@
 #pragma once
 
 #ifdef AS_PLATFORM_WINDOWS
+#if DLL_BUILD
 	#ifdef AS_BUILD_DLL
-		#define ARELIOS_API __declspec(dllexport)
+		#define   __declspec(dllexport)
 	#else
-		#define ARELIOS_API __declspec(dllimport)
+		#define   __declspec(dllimport)
 	#endif
+#else
+	#define AS_BUILD_DLL
+#endif
 #else
 	#error Platform Not Supported!
 #endif

@@ -16,7 +16,7 @@ namespace Arelios {
 			:title(Title), width(Width), height(Height) {}
 	};
 
-	class ARELIOS_API Window {
+	class Window {
 	public:
 		using EventCallBackFn = std::function<void(Event&)>;
 

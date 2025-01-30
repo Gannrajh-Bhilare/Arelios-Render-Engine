@@ -3,7 +3,7 @@
 
 namespace Arelios {
 
-	class ARELIOS_API Renderer : public Layer {
+	class Renderer : public Layer {
 	public:
 		Renderer();
 		~Renderer() override;

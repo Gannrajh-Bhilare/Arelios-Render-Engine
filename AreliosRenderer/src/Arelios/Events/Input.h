@@ -3,7 +3,7 @@
 
 namespace Arelios {
 
-	class ARELIOS_API Input {
+	class Input {
 	private:
 		static Input* s_Instance;
 	public:

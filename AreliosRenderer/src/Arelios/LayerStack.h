@@ -6,10 +6,10 @@
 
 namespace Arelios {
 
-	class ARELIOS_API LayerStack {
+	class LayerStack {
 	private:
 		std::vector<Layer*> m_Layers;
-		std::vector<Layer*>::iterator m_LayerInsert;
+		unsigned int m_LayerIndex = 0;
 	public:
 		LayerStack();
 		~LayerStack();

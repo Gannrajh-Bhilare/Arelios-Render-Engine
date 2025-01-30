@@ -4,7 +4,7 @@
 
 namespace Arelios {
 	
-	class ARELIOS_API WindowReSizeEvent : public Event {
+	class WindowReSizeEvent : public Event {
 	private:
 		int m_Width;
 		int m_Height;
@@ -29,7 +29,7 @@ namespace Arelios {
 		virtual int GetCategoryFlags() const override { return EventCategoryApplication; }
 	};
 
-	class ARELIOS_API WindowCloseEvent : public Event {
+	class WindowCloseEvent : public Event {
 	public:
 		WindowCloseEvent() {}
 
@@ -40,7 +40,7 @@ namespace Arelios {
 		virtual int GetCategoryFlags() const override { return EventCategoryApplication; }
 	};
 
-	class ARELIOS_API AppTickEvent : public Event {
+	class AppTickEvent : public Event {
 	public:
 		AppTickEvent() {}
 
@@ -51,7 +51,7 @@ namespace Arelios {
 		virtual int GetCategoryFlags() const override { return EventCategoryApplication; }
 	};
 
-	class ARELIOS_API AppUpdateEvent : public Event {
+	class AppUpdateEvent : public Event {
 	public:
 		AppUpdateEvent() {}
 
@@ -62,7 +62,7 @@ namespace Arelios {
 		virtual int GetCategoryFlags() const override { return EventCategoryApplication; }
 	};
 
-	class ARELIOS_API AppRenderEvent : public Event {
+	class AppRenderEvent : public Event {
 	public:
 		AppRenderEvent() {}
 

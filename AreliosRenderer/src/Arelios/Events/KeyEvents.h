@@ -4,7 +4,7 @@
 
 namespace Arelios {
 
-	class ARELIOS_API KeyEvent : public Event {
+	class KeyEvent : public Event {
 	protected:
 		KeyEvent(int keyCode)
 			:m_KeyCode(keyCode) {}
@@ -16,7 +16,7 @@ namespace Arelios {
 		virtual int GetCategoryFlags() const override { return EventCategoryKeyboard | EventCategoryInput; }
 	};
 
-	class ARELIOS_API KeyPressedEvent : public KeyEvent {
+	class   KeyPressedEvent : public KeyEvent {
 	private:
 		int m_RepeatCount;
 	public:
@@ -37,7 +37,7 @@ namespace Arelios {
 		virtual const char* GetName() const override { return "KeyPressed"; }
 	};
 
-	class ARELIOS_API KeyReleasedEvent : public KeyEvent {
+	class   KeyReleasedEvent : public KeyEvent {
 	public:
 		KeyReleasedEvent(int keyCode)
 			:KeyEvent(keyCode) {}
@@ -54,7 +54,7 @@ namespace Arelios {
 		virtual const char* GetName() const override { return "KeyRelease"; }
 	};
 
-	class ARELIOS_API KeyTypedEvent : public KeyEvent {
+	class   KeyTypedEvent : public KeyEvent {
 	public:
 		KeyTypedEvent(int keyCode)
 			:KeyEvent(keyCode) {}
